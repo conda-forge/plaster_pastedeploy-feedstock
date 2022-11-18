@@ -1,18 +1,18 @@
 {% set name = "plaster_pastedeploy" %}
-{% set version = "0.7" %}
+{% set version = "1.0" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 391d93a4e1ff81fc3bae27508ebb765b61f1724ae6169f83577f06b6357be7fd
+  sha256: 3bdc1eefe876c32c3a058a05e0b9f2c936e92d94b4655e22164299bcb20bb59b
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
